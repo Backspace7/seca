@@ -6,5 +6,29 @@
     "default": 10,
     "max": 50
   },
-  "mysql": "mysql://root:vnb41ups@localhost:3306/api"
+  "mysql": "mysql://root:vnb41ups@localhost:3306/api",
+  "authentication": {
+    "secret": "bfd21adc9ca5bac9e38c5629fd01f307adfb501968bef88aef231d42a52ba1a44cace1ea5d82c8b99e6a9d5c12009bd1c826c6466dcd5f8620108fc86b0e54409f09dc6504ef508c7e94c7da99b1ded66925d9e6a308ae553e90647ed1d3bab22228f9b6909de8ce04ac89da11fd7d6e957407a64fc31bf824da91ce339d34fd1615e350e5b4e3eba2a913eeb004ba282620f69ffcb24491c009842665b0509b3384a1dff1aa2810ef8e172c8e37eaadb3ed71270fe496d983fca3a173608fa6027cdc0f8def3e502dea6c1459b7c8a9f61c5e05aec2890f59fffd7fbaac43cd941e49b8a317e45c367fe9f15dd27eaad124a08dc553671f862a035a8aa9fe0f",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
 }
