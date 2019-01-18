@@ -1,30 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {Button} from 'reactstrap';
+import {Button,Alert,Container} from 'reactstrap';
+import {Switch, Route, Link, BrowserRouter as Router} from 'react-router-dom'
+import Meth from './meth';
+import Temp from './temp';
+import Home from './home';
+
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-
-          </p>
-          <Button color="danger">Danger!</Button>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container>
+        <Home/>
+        <Switch>
+          <Route exact path = "/temperatura" component={Temp}/>
+          <Route exact path = "/metano" component={Meth}/>
+        </Switch>
+      </Container>
     );
   }
 }
+
 
 export default App;
