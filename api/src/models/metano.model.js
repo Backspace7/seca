@@ -5,12 +5,12 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const temperatura = sequelizeClient.define('temperatura', {
+  const metano = sequelizeClient.define('metano', {
     SsID: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    temp: {
+    meth: {
       type: DataTypes.FLOAT,
       allowNull: false
     }
@@ -23,10 +23,10 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  temperatura.associate = function (models) {
+  metano.associate = function (models) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return temperatura;
+  return metano;
 };
