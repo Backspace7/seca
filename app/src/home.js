@@ -20,15 +20,15 @@ class Home extends Component {
      return (
        <Container>
          <Navbar color="transparent" light >
-           <NavbarBrand href="/" className="mr-auto"><h1 class="text-info font-weight-normal" > Sensors Data</h1></NavbarBrand>
+           <NavbarBrand href="/" className="mr-auto"><h1 className="text-info font-weight-normal" > Sensors Data</h1></NavbarBrand>
            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
            <Collapse isOpen={!this.state.collapsed} navbar>
              <Nav navbar>
                <NavItem>
-                 <NavLink href="/temperatura"><h4 class="text-black font-weight-normal">Temperatura</h4></NavLink>
+                 <NavLink href="/temperatura"><h4 className="text-black font-weight-normal">Temperatura</h4></NavLink>
                </NavItem>
                <NavItem>
-                 <NavLink href="/metano"><h4 class="text-black font-weight-normal">Metano</h4></NavLink>
+                 <NavLink href="/metano"><h4 className="text-black font-weight-normal">Metano</h4></NavLink>
                </NavItem>
              </Nav>
            </Collapse>
